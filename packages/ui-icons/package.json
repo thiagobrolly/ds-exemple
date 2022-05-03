@@ -1,0 +1,25 @@
+{
+  "name": "@thiago_brolly/icons",
+  "version": "0.0.0",
+  "description": "> TODO: description",
+  "author": "Thiago Sousa <thiago.sousa@paylivre.com>",
+  "license": "MIT",
+  "main": "lib/index.js",
+  "module": "lib/index.esm.js",
+  "types": "lib/index.d.ts",
+  "files": [
+    "lib"
+  ],
+  "sideEffects": false,
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "prebuild": "rimraf lib",
+    "build": "rollup -c"
+  },
+  "peerDependencies": {
+    "react": ">=16.0.0",
+    "react-dom": ">=16.0.0"
+  }
+}
