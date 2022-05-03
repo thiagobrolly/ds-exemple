@@ -1,6 +1,6 @@
 {
   "name": "@thiago_brolly/styles",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Variant styles shared across components",
   "keywords": [
     "css",

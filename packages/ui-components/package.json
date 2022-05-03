@@ -2,7 +2,7 @@
   "name": "@thiago_brolly/components",
   "description": "Design System Components",
   "author": "Thiago Sousa <thiago.sousa@paylivre.com>",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "license": "MIT",
   "main": "lib/index.js",
   "module": "lib/index.esm.js",
@@ -28,7 +28,7 @@
     "styled-components": ">=5.0.0"
   },
   "dependencies": {
-    "@thiago_brolly/icons": "^0.0.2",
-    "@thiago_brolly/styles": "^0.0.2"
+    "@thiago_brolly/icons": "^0.0.3",
+    "@thiago_brolly/styles": "^0.0.3"
   }
 }
