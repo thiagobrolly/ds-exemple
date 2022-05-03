@@ -2,7 +2,7 @@
   "name": "@thiago_brolly/components",
   "description": "Design System Components",
   "author": "Thiago Sousa <thiago.sousa@paylivre.com>",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "license": "MIT",
   "main": "lib/index.js",
   "module": "lib/index.esm.js",
@@ -19,7 +19,8 @@
     "build": "rollup -c"
   },
   "devDependencies": {
-    "@types/styled-components": "^5.1.25"
+    "@types/styled-components": "^5.1.25",
+    "styled-components": "^5.3.5"
   },
   "peerDependencies": {
     "react": ">=16.0.0",
@@ -27,8 +28,7 @@
     "styled-components": ">=5.0.0"
   },
   "dependencies": {
-    "@thiago_brolly/icons": "^0.0.1",
-    "@thiago_brolly/styles": "^0.0.1",
-    "styled-components": "^5.3.5"
+    "@thiago_brolly/icons": "^0.0.2",
+    "@thiago_brolly/styles": "^0.0.2"
   }
 }
