@@ -1,6 +1,6 @@
 {
   "name": "@thiago_brolly/styles",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Variant styles shared across components",
   "keywords": [
     "css",
@@ -28,12 +28,5 @@
   "scripts": {
     "prebuild": "rimraf lib",
     "build": "rollup -c"
-  },
-  "devDependencies": {
-    "@types/styled-components": "^5.1.25",
-    "styled-components": "^5.3.5"
-  },
-  "peerDependencies": {
-    "styled-components": ">=5.0.0"
   }
 }
