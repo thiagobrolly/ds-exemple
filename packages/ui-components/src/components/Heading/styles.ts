@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components';
-import { theme, global } from '@thiago_brolly/styles';
+import { theme } from '@thiago_brolly/styles';
 import { HeadingProps } from '.';
 
 const mediaFont = () => css`
@@ -59,7 +59,6 @@ const titleCase = (uppercase: boolean) => css`
 `;
 
 export const Title = styled.h1<HeadingProps>`
-  ${global};
   ${({
     color,
     size,
@@ -71,12 +70,10 @@ export const Title = styled.h1<HeadingProps>`
     marginLeft,
     marginRight,
   }) => css`
-    font-family: ${bold
-      ? theme.font.family.defaultBold
-      : theme.font.family.default} !important;
     ${titleColor[color!]()};
     ${titleSize[size!]()};
     ${titleCase(uppercase!)};
+    font-weight: ${bold && 'bold'};
     margin: ${margin};
     margin-top: ${marginTop};
     margin-bottom: ${marginBottom};

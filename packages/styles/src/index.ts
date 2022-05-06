@@ -1,3 +1,3 @@
-import { global, theme } from './theme';
-
-export { global, theme };
+export * from './Theme';
+export * from './GlobalStyles';
+export * from './Provider';

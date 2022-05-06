@@ -22,7 +22,7 @@
     "webpack-dev-server": "^4.7.2"
   },
   "dependencies": {
-    "@thiago_brolly/components": "^0.0.4",
-    "@thiago_brolly/icons": "^0.0.4"
+    "@thiago_brolly/icons": "^0.0.4",
+    "@thiago_brolly/styles": "^0.0.4"
   }
 }

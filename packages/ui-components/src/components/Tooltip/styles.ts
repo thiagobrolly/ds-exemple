@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components';
-import { theme, global } from '@thiago_brolly/styles';
+import { theme } from '@thiago_brolly/styles';
 import { TooltipProps } from '.';
 
 type ContentProps = Pick<TooltipProps, 'position'>;
@@ -106,7 +106,6 @@ const wrapperModifiers = {
 };
 
 export const Wrapper = styled.div<WrapperProps>`
-  ${global}
   ${({ isOpen }) => css`
     position: relative;
     width: max-content;

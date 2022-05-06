@@ -1,32 +1,3 @@
-import { css } from 'styled-components';
-import AvenirNextLTProBold from './fonts/AvenirNextLTPro-Bold.otf';
-import AvenirNextLTProIt from './fonts/AvenirNextLTPro-It.otf';
-import AvenirNextLTProRegular from './fonts/AvenirNextLTPro-Regular.otf';
-
-export const global = css`
-  @font-face {
-    font-family: 'Avenir Next LT Pro Bold';
-    src: url(${AvenirNextLTProBold}) format('truetype');
-    font-display: auto;
-  }
-
-  @font-face {
-    font-family: 'Avenir Next LT Pro It';
-    src: url(${AvenirNextLTProIt}) format('truetype');
-    font-display: auto;
-  }
-
-  @font-face {
-    font-family: 'Avenir Next LT Pro Regular';
-    src: url(${AvenirNextLTProRegular}) format('truetype');
-    font-display: auto;
-  }
-
-  * {
-    font-family: 'Avenir Next LT Pro Regular';
-  }
-`;
-
 export const theme = {
   color: {
     // Color Scheme

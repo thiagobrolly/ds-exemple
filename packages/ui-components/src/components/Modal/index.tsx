@@ -1,5 +1,7 @@
 import React, { useEffect } from 'react';
+import ReactDOM from 'react-dom';
 import { PlOutlineClose } from '@thiago_brolly/icons';
+import { Heading } from '../Heading';
 
 import * as S from './styles';
 
@@ -9,7 +11,9 @@ export interface ModalProps {
   onRequestClose: (newValue: boolean) => void;
   shouldCloseOnOverlayClick?: boolean;
   shouldCloseOnEscClick?: boolean;
+  scrollBarDisabled?: boolean;
   viewCloseButton?: boolean;
+  title?: string;
 }
 
 export const Modal = ({
@@ -17,25 +21,29 @@ export const Modal = ({
   onRequestClose,
   shouldCloseOnOverlayClick = false,
   shouldCloseOnEscClick = true,
+  scrollBarDisabled = true,
   viewCloseButton,
   children,
+  title = '',
   ...props
 }: ModalProps) => {
   useEffect(() => {
-    const handleKeyUp = ({ key }: KeyboardEvent) => {
-      key === 'Escape' && shouldCloseOnEscClick && onRequestClose(false);
-    };
-    window.addEventListener('keyup', handleKeyUp);
-    return () => window.removeEventListener('keyup', handleKeyUp);
-  }, [onRequestClose, shouldCloseOnEscClick]);
+    isOpen && scrollBarDisabled
+      ? (document.body.style.overflow = 'hidden')
+      : (document.body.style.overflow = 'unset');
 
-  // if (isOpen) {
-  //   document.body.style.overflow = 'hidden';
-  // } else {
-  //   document.body.removeAttribute('style');
-  // }
+    function keyListener({ key }: KeyboardEvent) {
+      if (key === 'Escape' && shouldCloseOnEscClick && isOpen) {
+        onRequestClose(false);
+      }
+    }
 
-  return (
+    document.addEventListener('keydown', keyListener);
+
+    return () => document.removeEventListener('keydown', keyListener);
+  }, [onRequestClose, shouldCloseOnEscClick, isOpen, scrollBarDisabled]);
+
+  const modal = (
     <S.Modal
       className="ui-modal"
       shouldCloseOnEscClick={shouldCloseOnEscClick}
@@ -49,14 +57,35 @@ export const Modal = ({
         role="region"
         aria-label="overlay"
       />
-      <S.Content {...props}>
-        {viewCloseButton && (
-          <S.Close onClick={() => onRequestClose(false)}>
-            <PlOutlineClose size={16} color="currentColor" />
-          </S.Close>
-        )}
-        {children}
+      <S.Content
+        aria-modal
+        aria-labelledby={title}
+        tabIndex={-1}
+        role="dialog"
+        {...props}
+      >
+        <S.FocusContainer>
+          <S.Header>
+            {viewCloseButton && (
+              <S.Close
+                onClick={() => onRequestClose(false)}
+                data-dismiss="modal"
+                aria-label="Close"
+              >
+                <PlOutlineClose size={16} color="currentColor" />
+              </S.Close>
+            )}
+            {title && (
+              <Heading bold size="large" color="black">
+                {title}
+              </Heading>
+            )}
+          </S.Header>
+          {children}
+        </S.FocusContainer>
       </S.Content>
     </S.Modal>
   );
+
+  return isOpen ? ReactDOM.createPortal(modal, document.body) : null;
 };

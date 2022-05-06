@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components';
-import { theme, global } from '@thiago_brolly/styles';
+import { theme } from '@thiago_brolly/styles';
 import { ButtonProps } from './index';
 
 const buttonModifiers = {
@@ -121,7 +121,6 @@ const buttonTheme = {
 };
 
 export const Button = styled.button<ButtonProps>`
-  ${global};
   ${({
     appearance,
     size,

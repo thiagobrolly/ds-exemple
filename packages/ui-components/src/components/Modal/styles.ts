@@ -1,5 +1,6 @@
 import styled, { css } from 'styled-components';
-import { theme, global } from '@thiago_brolly/styles';
+import { theme } from '@thiago_brolly/styles';
+import FocusLock from 'react-focus-lock';
 
 type OverlayProps = {
   shouldCloseOnOverlayClick?: boolean;
@@ -34,7 +35,6 @@ const modalModifiers = {
 };
 
 export const Modal = styled.div<ModalProps>`
-  ${global}
   position: fixed;
   width: 100%;
   height: 100%;
@@ -65,39 +65,37 @@ export const Overlay = styled.div<OverlayProps>`
 `;
 
 export const Content = styled.div`
+  z-index: 99999;
+  transition: ${theme.transition.default};
+`;
+
+export const FocusContainer = styled(FocusLock)`
   display: flex;
   flex-direction: column;
-  align-items: center;
   padding: 20px;
   background-color: #fff;
   color: #1e1d24;
   border-radius: 8px;
-  z-index: 99999;
-  transition: ${theme.transition.default};
-  /* animation: slideIn 0.5s ease-in-out;
+`;
 
-  @keyframes slideIn {
-    from {
-      transform: translateY(-150px);
-      opacity: 0;
-    }
-    to {
-      transform: translateY(0);
-      opacity: 1;
-    }
-  } */
+export const Header = styled.div`
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 2.4rem;
 `;
 
 export const Close = styled.button`
   align-self: flex-end;
-  margin-bottom: 10px;
+  margin-right: -14px;
+  margin-top: -14px;
+  margin-bottom: 5px;
   color: ${theme.color.primary};
   background: transparent;
   border: 0;
   transition: 0.3s;
   border-radius: 50%;
-  width: 40px;
-  height: 40px;
+  width: 32px;
+  height: 32px;
   display: flex;
   align-items: center;
   justify-content: center;

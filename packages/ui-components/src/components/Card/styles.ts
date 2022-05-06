@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components';
-import { theme, global } from '@thiago_brolly/styles';
+import { theme } from '@thiago_brolly/styles';
 import { CardProps } from '.';
 
 const cardModifiers = {
@@ -24,7 +24,6 @@ const cardModifiers = {
 };
 
 export const Wrapper = styled.div<CardProps>`
-  ${global};
   ${({ size, margin, marginTop, marginBottom, marginLeft, marginRight }) => css`
     display: flex;
     flex-direction: column;
