@@ -1,6 +1,6 @@
 {
   "name": "@thiago_brolly/app",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "main": "index.js",
   "license": "MIT",
   "private": true,
@@ -22,7 +22,7 @@
     "webpack-dev-server": "^4.7.2"
   },
   "dependencies": {
-    "@thiago_brolly/icons": "^0.0.4",
-    "@thiago_brolly/styles": "^0.0.4"
+    "@thiago_brolly/icons": "^0.0.5",
+    "@thiago_brolly/styles": "^0.0.5"
   }
 }

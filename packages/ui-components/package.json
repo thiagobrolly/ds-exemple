@@ -2,7 +2,7 @@
   "name": "@thiago_brolly/components",
   "description": "Design System Components",
   "author": "Thiago Sousa <thiago.sousa@paylivre.com>",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "license": "MIT",
   "main": "lib/index.js",
   "module": "lib/index.esm.js",
@@ -21,8 +21,8 @@
   "dependencies": {
     "@radix-ui/react-dialog": "^0.1.7",
     "@radix-ui/react-popover": "^0.1.6",
-    "@thiago_brolly/icons": "^0.0.4",
-    "@thiago_brolly/styles": "^0.0.4",
+    "@thiago_brolly/icons": "^0.0.5",
+    "@thiago_brolly/styles": "^0.0.5",
     "react-focus-lock": "^2.9.0",
     "styled-components": "^5.3.5"
   },
