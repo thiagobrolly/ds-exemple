@@ -6,6 +6,10 @@ type OverlayProps = {
   shouldCloseOnOverlayClick?: boolean;
 };
 
+type ContentProps = {
+  isOpen: boolean;
+};
+
 type ModalProps = {
   shouldCloseOnEscClick: boolean;
   isOpen: boolean;
@@ -64,9 +68,35 @@ export const Overlay = styled.div<OverlayProps>`
   z-index: ${theme.layers.overlay};
 `;
 
-export const Content = styled.div`
+export const Content = styled.div<ContentProps>`
   z-index: 99999;
   transition: ${theme.transition.default};
+
+  //animation: slideIn 0.35s ease-in-out;
+  animation: ${({ isOpen }) =>
+    isOpen ? 'contentIn 0.35s ease-in-out' : 'contentOut 0.35s ease-in-out'};
+
+  @keyframes contentIn {
+    from {
+      transform: translateY(-150px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+  @keyframes contentOut {
+    from {
+      transform: translateY(0);
+      opacity: 1;
+    }
+    to {
+      transform: translateY(-150px);
+      opacity: 0;
+    }
+  }
 `;
 
 export const FocusContainer = styled(FocusLock)`

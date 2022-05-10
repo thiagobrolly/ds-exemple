@@ -9,4 +9,3 @@ export { Modal } from './Modal';
 export { TextField } from './TextField';
 export { Spinner } from './Spinner';
 export { Popover } from './Popover';
-export { DialogModal } from './Dialog';

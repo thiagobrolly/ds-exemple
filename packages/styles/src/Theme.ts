@@ -57,7 +57,6 @@ export const theme = {
       defaultBold: 'Avenir Next LT Pro Bold',
       defaultItalico: 'Avenir Next LT Pro It',
       primary: "'Open Sans', sans-serif",
-      secondary: "'Montserrat', sans-serif",
     },
     weight: {
       light: '300',
@@ -110,8 +109,12 @@ export const theme = {
     default: '0.3s ease-in-out',
     fast: '0.1s ease-in-out',
   },
+
   border: {
-    radius: '0.8rem',
-    circle: '50%',
+    radius: {
+      small: '0.5rem',
+      medium: '0.8rem',
+      circle: '50%',
+    },
   },
 } as const;

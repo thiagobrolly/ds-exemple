@@ -30,7 +30,7 @@ export const Wrapper = styled.div<CardProps>`
     padding: 2.4rem;
     background-color: ${theme.color.white};
     box-shadow: 0 0 10px 0 rgba(0, 0, 0, 7%);
-    border-radius: ${theme.border.radius};
+    border-radius: ${theme.border.radius.medium};
     margin: ${margin};
     margin-top: ${marginTop};
     margin-bottom: ${marginBottom};

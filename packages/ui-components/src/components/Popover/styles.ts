@@ -1,19 +1,25 @@
 import styled from 'styled-components';
-import * as Pop from '@radix-ui/react-popover';
+import { theme } from '@thiago_brolly/styles';
+import * as PopoverPrimitive from '@radix-ui/react-popover';
 
-export const StyledContent = styled(Pop.Content)`
-  border-radius: 3;
-  padding: 20px;
-  font-size: 14;
-  background-color: gainsboro;
-  color: black;
+export interface TooltipProps {
+  colorContent?: string;
+}
+
+export const Trigger = styled(PopoverPrimitive.Trigger)`
+  border: 0;
+  width: fit-content;
+  background: none;
+  cursor: pointer;
 `;
 
-export const StyledArrow = styled(Pop.Arrow)`
-  fill: gainsboro;
+export const Content = styled(PopoverPrimitive.Content)<TooltipProps>`
+  border-radius: ${theme.border.radius.small};
+  box-shadow: 1px 1px 20px 1px rgba(0, 0, 0, 0.35);
+  background-color: ${({ colorContent }) => colorContent || theme.color.white};
+  padding: 10px;
 `;
 
-export const StyledAnchor = styled(Pop.Anchor)`
-  background: gainsboro;
-  padding: 20px;
+export const Arrow = styled(PopoverPrimitive.Arrow)<TooltipProps>`
+  fill: ${({ colorContent }) => colorContent || theme.color.white};
 `;

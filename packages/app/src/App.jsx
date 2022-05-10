@@ -8,11 +8,14 @@ import {
   TextField,
   Card,
   Spinner,
+  Tooltip,
 } from '@thiago_brolly/components';
 import {
   PlOutlineAppstore,
   PlOutlineArrowDown,
   PlOutlineWallet,
+  PlOutlinePlusCircle,
+  PlOutlinePlusInfo,
 } from '@thiago_brolly/icons';
 
 import { Wrapper } from './styles.js';
@@ -24,6 +27,15 @@ export function App() {
     <Wrapper>
       <h1>Components</h1>
       <div>
+        <Tooltip className="app-tooltip" trigger={<PlOutlinePlusInfo />}>
+          Information
+        </Tooltip>
+        <Popover trigger={<PlOutlinePlusCircle />}>
+          Information{' '}
+          <button type="button" onClick={() => setHandleOpen(false)}>
+            Click
+          </button>
+        </Popover>
         <Popover />
         <Button onClick={() => setHandleOpen(true)}>Open modal</Button>
         <Modal

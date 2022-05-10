@@ -8,7 +8,7 @@ describe('<Tooltip />', () => {
     const title = <h1 aria-label="toogle Tooltip">Click here</h1>;
 
     render(
-      <Tooltip title={title}>
+      <Tooltip trigger={title}>
         <span>Content</span>
       </Tooltip>,
     );
@@ -49,7 +49,7 @@ describe('<Tooltip />', () => {
 describe('<Tooltip position/>', () => {
   it('should position the Tooltip to the right', () => {
     render(
-      <Tooltip title="click" position="right">
+      <Tooltip trigger="click">
         <span>Content</span>
       </Tooltip>,
     );

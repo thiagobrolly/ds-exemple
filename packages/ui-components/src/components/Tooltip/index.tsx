@@ -1,29 +1,30 @@
-import { useState } from 'react';
+import React from 'react';
+import { Root as TooltipRoot } from '@radix-ui/react-tooltip';
 import * as S from './styles';
 
-export type TooltipProps = {
-  title: React.ReactNode;
+export type TooltipProps = React.ComponentProps<typeof TooltipRoot> & {
+  trigger: React.ReactNode;
   children: React.ReactNode;
-  position?: 'right' | 'left';
   className?: string;
+  colorContent?: string;
 };
 
 export const Tooltip = ({
-  title,
+  trigger,
   children,
-  position = 'left',
-  className = '',
+  className,
+  colorContent,
+  ...props
 }: TooltipProps) => {
-  const [isOpen, setIsOpen] = useState(false);
-
   return (
-    <S.Wrapper isOpen={isOpen} className={className}>
-      <S.Title onClick={() => setIsOpen(!isOpen)}>{title}</S.Title>
-
-      <S.Content aria-hidden={!isOpen} position={position}>
+    <TooltipRoot delayDuration={500} {...props}>
+      <S.Trigger asChild>
+        <div className={`trigger-tooltip ${className}`}>{trigger}</div>
+      </S.Trigger>
+      <S.Content sideOffset={5} colorContent={colorContent}>
         {children}
+        <S.Arrow offset={10} colorContent={colorContent} />
       </S.Content>
-      <S.Overlay aria-hidden={!isOpen} onClick={() => setIsOpen(false)} />
-    </S.Wrapper>
+    </TooltipRoot>
   );
 };

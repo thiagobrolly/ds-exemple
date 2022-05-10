@@ -139,7 +139,7 @@ export const Button = styled.button<ButtonProps>`
     font-weight: ${theme.font.weight.regular};
     text-align: center;
     transition: background 0.3s, filter 0.3s;
-    border-radius: ${theme.border.radius};
+    border-radius: ${theme.border.radius.medium};
     text-decoration: none;
     width: fit-content;
     margin: ${margin};
@@ -162,7 +162,7 @@ export const Button = styled.button<ButtonProps>`
         display: flex;
         align-items: center;
         justify-content: center;
-        border-radius: ${theme.border.radius};
+        border-radius: ${theme.border.radius.medium};
         ${buttonModifiers[size!]()}
       }
     }

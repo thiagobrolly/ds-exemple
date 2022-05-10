@@ -62,6 +62,7 @@ export const Modal = ({
         aria-labelledby={title}
         tabIndex={-1}
         role="dialog"
+        isOpen={isOpen}
         {...props}
       >
         <S.FocusContainer>
@@ -72,7 +73,7 @@ export const Modal = ({
                 data-dismiss="modal"
                 aria-label="Close"
               >
-                <PlOutlineClose size={16} color="currentColor" />
+                <PlOutlineClose size={12} color="currentColor" />
               </S.Close>
             )}
             {title && (
